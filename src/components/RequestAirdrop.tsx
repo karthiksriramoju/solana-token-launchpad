@@ -49,22 +49,22 @@ const RequestAirdrop = () => {
   const key = wallet?.publicKey
 
   return (
-    <div className="p-4">
-      <h1 className="text-xl font-bold mb-4">Request SOL Airdrop</h1>
-      <h2>Public Address : {key?.toString()}</h2>
-      <div className="flex flex-col gap-2">
-        <label htmlFor="airdrop-amount">Enter Amount (SOL):</label>
+    <div className="flex min-h-screen items-center justify-center bg-gray-100 p-6">
+      <div className="w-full max-w-xl p-8 rounded-xl ">
+        <h1 className="text-2xl font-bold text-gray-800 mb-8 text-center">Request SOL Airdrop</h1>
+        {wallet.publicKey ? <p className="text-md text-gray-600 mb-6"><strong>Public Address:</strong> {key?.toString()}</p> : null
+}
+        <label className="block mb-2 text-md font-bold text-gray-700">Enter Amount (SOL):</label>
         <input
           id="airdrop-amount"
           type="text"
           value={amount}
           onChange={handleChange}
-          className="p-2 border rounded"
-          placeholder="Enter amount (max 2 SOL)"
+          className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-gray-800 focus:outline-0 focus:ring-2 focus:ring-gray-500 border border-gray-300 bg-white h-14 placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal"          placeholder="Enter amount (max 2 SOL)"
         />
         <button
           onClick={handleAirdropRequest}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="w-full bg-gray-700 text-white py-3 rounded-lg font-medium hover:bg-gray-950 mt-4"
         >
           Request Airdrop
         </button>

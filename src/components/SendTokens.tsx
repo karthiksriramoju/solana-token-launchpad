@@ -31,28 +31,29 @@ const SendTokens = () => {
       toast.success("Sent " + amount + " SOL to " + to);
   }
   return (
-    <div className="max-w-md mx-auto p-6 border border-gray-300 rounded-lg bg-gray-100 shadow-lg">
-      <label className="block mb-2 font-medium text-gray-700">Recipient Address</label>
-      <input
-        type="text"
-        className="w-full mb-4 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        value={to}
-        onChange={handleChange}
-      />
-      <label className="block mb-2 font-medium text-gray-700">Amount</label>
-      <input
-        type="text"
-        className="w-full mb-4 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        value={amount}
-        onChange={handleChange2}
-      />
-      <button
-        type="submit"
-        onClick={transferTokens}
-        className="w-full px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      >
-        Send
-      </button>
+    <div className="flex min-h-screen items-center justify-center bg-gray-100 p-6">
+      <div className="w-full max-w-xl p-8 rounded-xl ">
+        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Transfer Tokens</h1>
+        <label className="block mb-2 font-medium text-md text-gray-700">Recipient Address</label>
+        <input
+          type="text"
+          className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-gray-800 focus:outline-0 focus:ring-2 focus:ring-gray-500 border border-gray-300 bg-white h-14 placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal"          value={to}
+          onChange={handleChange}
+        />
+        <label className="block mt-4 mb-2 text-md font-medium text-gray-700">Amount</label>
+        <input
+          type="text"
+          className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-gray-800 focus:outline-0 focus:ring-2 focus:ring-gray-500 border border-gray-300 bg-white h-14 placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal"          value={amount}
+          onChange={handleChange2}
+        />
+        <button
+          type="submit"
+          onClick={transferTokens}
+          className="w-full bg-gray-700 text-white py-3 rounded-lg font-medium hover:bg-gray-950 mt-6"
+        >
+          Send
+        </button>
+      </div>
     </div>
   );
 };
