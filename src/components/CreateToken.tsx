@@ -5,6 +5,7 @@ import { createInitializeInstruction, pack } from '@solana/spl-token-metadata';
 import { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
+import SelectWallet from "./SelectWallet";
 
 const CreateToken = () => {
     const wallet = useWallet();
@@ -21,6 +22,7 @@ const CreateToken = () => {
     const [supply, setSupply] = useState("");
 
     const handleImageChange = (e: any) => {
+
         setTokenImage(e.target.files[0]);
     };
 
@@ -45,6 +47,11 @@ const CreateToken = () => {
     };
 
     const handleImageUpload = async () => {
+        if (!wallet.publicKey) {
+            toast.error("Please connect your wallet first!");
+            return;
+          }
+
         if(!name) toast.error("Please enter name");
         if(!symbol) toast.error("Please enter symbol");
         if(!description) toast.error("Please enter description");
@@ -63,7 +70,7 @@ const CreateToken = () => {
 
         try {
             // Upload image to Pinata
-            const response = await axios.post('https://api.pinata.cloud/pinning/pinFileTo ', formData, {
+            const response = await axios.post('https://api.pinata.cloud/pinning/pinFileToIPFS ', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'pinata_api_key': '56beee8eaad7b6bb9d40',
@@ -211,8 +218,10 @@ const CreateToken = () => {
           className="relative flex min-h-screen flex-col bg-gray-100 group/design-root overflow-x-hidden"
           style={{ fontFamily: `"Work Sans", "Noto Sans", sans-serif` }}
       >
+        
           <div className="layout-container flex h-full grow flex-col">
               <div className="px-40 flex flex-1 justify-center py-5">
+            
                   <div className="layout-content-container flex flex-col w-[512px] max-w-[960px] flex-1">
                       <div className="flex flex-wrap justify-between gap-3 p-4">
                           <div className="flex min-w-72 flex-col gap-3">
@@ -309,9 +318,12 @@ const CreateToken = () => {
                               </span>
                           </button>
                       </div>
-                  </div>
+                  </div> 
               </div>
+
           </div>
+
+
       </div>
   );
 }

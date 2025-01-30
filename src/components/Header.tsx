@@ -1,12 +1,15 @@
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import '@solana/wallet-adapter-react-ui/styles.css';
+import { useWallet } from "@solana/wallet-adapter-react";
+
 import { Link, NavLink } from 'react-router-dom';
 import ShowBalance from './ShowBalance';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const wallet = useWallet();
+
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -47,7 +50,7 @@ const Header = () => {
                     </NavLink>
 
                     <NavLink
-                        to="/create-a-token"
+                        to="/create-token"
                         className={({ isActive }) =>
                             `text-white text-base font-medium transition-all duration-200 hover:underline ${isActive ? 'underline text-silver' : ''}`
                         }

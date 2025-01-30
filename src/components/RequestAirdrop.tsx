@@ -2,6 +2,7 @@ import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import SelectWallet from "./SelectWallet";
 
 const RequestAirdrop = () => {
   const [amount, setAmount] = useState("");
@@ -60,11 +61,11 @@ const RequestAirdrop = () => {
           type="text"
           value={amount}
           onChange={handleChange}
-          className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-gray-800 focus:outline-0 focus:ring-2 focus:ring-gray-500 border border-gray-300 bg-white h-14 placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal"          placeholder="Enter amount (max 2 SOL)"
+          className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-gray-800 focus:outline-0 focus:ring-2 focus:ring-gray-500 border border-gray-300 bg-white h-14 placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal mb-3"          placeholder="Enter amount (max 2 SOL)"
         />
         <button
           onClick={handleAirdropRequest}
-          className="w-full bg-gray-700 text-white py-3 rounded-lg font-medium hover:bg-gray-950 mt-4"
+          className="w-full bg-gray-700 text-white py-3.5 rounded-lg font-medium hover:bg-gray-950 mt-4"
         >
           Request Airdrop
         </button>

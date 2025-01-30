@@ -7,6 +7,8 @@ import { ToastContainer } from 'react-toastify';
 import SendTokens from './components/SendTokens';
 import CreateToken from './components/CreateToken'
 import MainLayout from './components/MainLayout';
+import HomePage from './components/HomePage';
+
 import './App.css'
 
 function App() {
@@ -19,9 +21,10 @@ function App() {
               <Router>
               <MainLayout>
                   <Routes>
+                    <Route path="/" element={<HomePage />} />
                     <Route path="/request-airdrop" element={<RequestAirdrop />} />
                     <Route path="/transfer-tokens" element={<SendTokens />} />
-                    <Route path="/create-a-token" element={<CreateToken />} />
+                    <Route path="/create-token" element={<CreateToken />} />
                   </Routes>
                 </MainLayout>                  
               </Router>
