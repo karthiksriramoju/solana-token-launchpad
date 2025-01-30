@@ -256,7 +256,7 @@ const CreateToken = () => {
                           <label className="flex flex-col min-w-40 flex-1">
                               <p className="text-gray-700 text-base font-medium leading-normal pb-2">Decimals</p>
                               <input
-                                  placeholder="Decimals default(9)"
+                                  placeholder="Decimals (ex : 9)"
                                   className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-gray-800 focus:outline-0 focus:ring-2 focus:ring-gray-500 border border-gray-300 bg-white h-14 placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal"
                                   id="decimals"
                                   onChange={handleDecimalsInputChange}
