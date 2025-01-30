@@ -4,6 +4,7 @@ import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { Analytics } from "@vercel/analytics/react"
 import SendTokens from './components/SendTokens';
 import CreateToken from './components/CreateToken'
 import MainLayout from './components/MainLayout';
@@ -32,6 +33,7 @@ function App() {
       </WalletProvider>
     </ConnectionProvider>
     <ToastContainer />
+    <Analytics/>
   </>
   )
 }
