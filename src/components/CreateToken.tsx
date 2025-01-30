@@ -154,20 +154,7 @@ const CreateToken = () => {
                 updateAuthority: wallet.publicKey!,
             }),
         );
-
-        // Add revoke instructions if necessary
-        // if (revokeFreezeAuthority) {
-        //     transaction.add(await createRevokeAuthorityInstruction(mintKeypair.publicKey, 'freeze', wallet.publicKey!));
-        // }
-
-        // if (revokeMintAuthority) {
-        //     transaction.add(await createRevokeAuthorityInstruction(mintKeypair.publicKey, 'mint', wallet.publicKey!));
-        // }
-
-        // if (revokeUpdateAuthority) {
-        //     transaction.add(await createRevokeAuthorityInstruction(mintKeypair.publicKey, 'update', wallet.publicKey!));
-        // }
-
+        
         const recentBlockhash = await connection.getLatestBlockhash();
         transaction.recentBlockhash = recentBlockhash.blockhash;
         transaction.feePayer = wallet.publicKey!;
