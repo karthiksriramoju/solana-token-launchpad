@@ -10,11 +10,11 @@ export default function HomePage() {
           Solana Token <span className="text-purple-500">Launchpad</span>
         </h1>        
         <p className="mt-6 text-xl text-gray-700">
-            Launch, Airdrop, and Transfer tokens on Solana.
+        Airdrop, Launch and Transfer tokens on Solana.
         </p>
         <div className="mt-10 flex justify-center gap-5">
-        <a href="/create-token" className="px-6 py-3 bg-blue-400 rounded-lg text-md font-semibold hover:bg-blue-600 text-white">Create Token</a>    
-          <a href="/request-airdrop" className="px-6 py-3 bg-purple-400 rounded-lg text-md font-semibold hover:bg-purple-600 text-white">Airdrop</a>
+        <a href="/create-token" className="px-6 py-3 bg-blue-400 rounded-lg text-md font-semibold hover:bg-blue-600 text-white">Airdrop</a>    
+          <a href="/request-airdrop" className="px-6 py-3 bg-purple-400 rounded-lg text-md font-semibold hover:bg-purple-600 text-white">Create Token</a>
           <a href="/transfer-tokens" className="px-6 py-3 bg-gray-600 rounded-lg text-md font-semibold hover:bg-gray-700 text-white ">Transfer Tokens</a>
       
         </div>
