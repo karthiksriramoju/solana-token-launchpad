@@ -1,6 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 
 
 export default function HomePage() {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path:any) => {
+    navigate(path);
+  };
+
 
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900">
@@ -12,12 +19,26 @@ export default function HomePage() {
         <p className="mt-6 text-xl text-gray-700">
         Airdrop, Launch and Transfer tokens on Solana.
         </p>
-        <div className="mt-10 flex justify-center gap-5">
-        <a href="/create-token" className="px-6 py-3 bg-blue-400 rounded-lg text-md font-semibold hover:bg-blue-600 text-white">Airdrop</a>    
-          <a href="/request-airdrop" className="px-6 py-3 bg-purple-400 rounded-lg text-md font-semibold hover:bg-purple-600 text-white">Create Token</a>
-          <a href="/transfer-tokens" className="px-6 py-3 bg-gray-600 rounded-lg text-md font-semibold hover:bg-gray-700 text-white ">Transfer Tokens</a>
-      
-        </div>
+        <div className=" mt-10 flex justify-center gap-5flex gap-6">
+          <button
+            onClick={() => handleNavigation('/request-airdrop')}
+            className="px-6 py-3 bg-blue-400 rounded-lg text-md font-semibold hover:bg-blue-600 text-white"
+          >
+            Airdrop
+          </button>
+          <button
+            onClick={() => handleNavigation('/create-token')}
+            className="px-6 py-3 bg-purple-400 rounded-lg text-md font-semibold hover:bg-purple-600 text-white"
+          >
+            Create Token
+          </button>
+          <button
+            onClick={() => handleNavigation('/transfer-tokens')}
+            className="px-6 py-3 bg-gray-600 rounded-lg text-md font-semibold hover:bg-gray-700 text-white"
+          >
+            Transfer Tokens
+          </button>
+          </div>
       </header>
 
       {/* Features Section */}

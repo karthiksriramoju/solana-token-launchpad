@@ -16,11 +16,14 @@ const Header = () => {
         <header className="bg-[#111418] flex items-center justify-between border-b border-[#293038] px-6 py-3 lg:px-10">
             <Link to="/">
                 <div className="flex items-center gap-4 text-white">
-                    <div className="size-10">
+                    <div className="size-8">
                         {/* Add your logo here */}
-                        <img src="src/components/sol2.png" alt="Logo" className="w-full h-full object-contain rou rounded-4xl" />
+                        <img
+                            src="https://cdn.brandfetch.io/ide0NUuTHO/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B"
+                            alt="Logo"
+                            className="w-full h-full object-contain"
+                        />
                         </div>
-                    <h2 className="text-purple-400 text-lg font-bold"></h2>
                 </div>
             </Link>
 
