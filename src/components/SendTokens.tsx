@@ -2,7 +2,7 @@ import { useState } from "react";
 import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction } from "@solana/web3.js";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { toast } from "react-toastify";
-import SelectWallet from "./SelectWallet";
+
 
 const SendTokens = () => {
   const [to, setTo] = useState("");

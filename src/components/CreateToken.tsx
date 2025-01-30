@@ -5,7 +5,6 @@ import { createInitializeInstruction, pack } from '@solana/spl-token-metadata';
 import { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
-import SelectWallet from "./SelectWallet";
 
 const CreateToken = () => {
     const wallet = useWallet();

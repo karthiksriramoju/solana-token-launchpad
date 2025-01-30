@@ -1,6 +1,5 @@
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import '@solana/wallet-adapter-react-ui/styles.css';
-
 import { Link, NavLink } from 'react-router-dom';
 import ShowBalance from './ShowBalance';
 import { useState } from 'react';
